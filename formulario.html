@@ -38,9 +38,21 @@
                 <option value="other">Other</option>
             </select>
 
-            <label for="recommendation">Would you recommend this form to a friend?</label>
+            <fieldset>
+                <legend>Would you recommend this form to a friend?</legend>
+                <label><input type="radio" name="recommendation" value="definitely" checked>Definitely</label>
+                <label><input type="radio" name="recommendation" value="maybe">Maybe</label>
+                <label><input type="radio" name="recommendation" value="notSure">Not sure</label>
+            </fieldset>
             
-            
+            <label for="favoriteFeature"> What is your favorite feature?
+                <select name="favoriteFeature" id="favoriteFeature">
+                    <option value="challenges">Challenges</option>
+                    <option value="projects">Projects</option>
+                    <option value="Community">Community</option>
+                    <option value="openSource">Open Source</option>
+                </select>
+            </label>
         </form>
 
     </div>
