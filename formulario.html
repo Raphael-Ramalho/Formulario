@@ -27,17 +27,20 @@
             <input type="email" name = "email" id="email" placeholder="Enter your Email">
 
             <label for="age">Age (optional)</label>
-            <input type="text" id="age" min="0" max="200" placeholder="age">
+            <input type="number" id="age" min="0" max="200" placeholder="Age">
 
-            <label>which option best describes your current role?
-                <select name="currentRole">
-                    <option value="student">Student</option>
-                    <option value="fullTimeJob">Full Time Job</option>
-                    <option value="fullTimeLearner">Full Time Learner</option>
-                    <option value="preferNotToSay">Prefer not to say</option>
-                    <option value="other">Other</option>
-                </select>
-            </label>
+            <label for="currentRole">Which option best describes your current role?</label>
+            <select name="currentRole" id="currentRole">
+                <option value="student">Student</option>
+                <option value="fullTimeJob">Full Time Job</option>
+                <option value="fullTimeLearner">Full Time Learner</option>
+                <option value="preferNotToSay">Prefer not to say</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="recommendation">Would you recommend this form to a friend?</label>
+            
+            
         </form>
 
     </div>
