@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,35 @@
 </head>
 <body>
     <header>
-        
+        <img src="images/Logo.png" alt="Logo">
+        <h1>Survey form</h1>
+        <p>SurveyForm.org</p>
     </header>
+
+    <div>
+        <header>
+            <h1>Survey Form</h1>
+            <p>Thank you for taking the time to help us improve the plataform</p>
+        </header>
+
+        <main>
+            <label>Name <input type="text" name = "name" placeholder="Enter your name"></label>
+
+            <label>Email <input type="email" name = email placeholder="Enter your Email"></label>
+
+            <label>Age (optional) <input type="number" min="0" max="200"></label>
+
+            <label>which option best describes your current role?
+                <select name="currentRole">
+                    <option value="student">Student</option>
+                    <option value="fullTimeJob">Full Time Job</option>
+                    <option value="fullTimeLearner">Full Time Learner</option>
+                    <option value="preferNotToSay">Prefer not to say</option>
+                    <option value="other">Other</option>
+                </select>
+            </label>
+        </main>
+
+    </div>
 </body>
 </html>
