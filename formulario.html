@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,12 +19,15 @@
             <p>Thank you for taking the time to help us improve the plataform</p>
         </header>
 
-        <main>
-            <label>Name <input type="text" name = "name" placeholder="Enter your name"></label>
+        <form action="">
+            <label for="name">Name</label>
+            <input type="text" name = "name" id="name" placeholder="Enter your name">
 
-            <label>Email <input type="email" name = email placeholder="Enter your Email"></label>
+            <label for="email">Email</label>
+            <input type="email" name = "email" id="email" placeholder="Enter your Email">
 
-            <label>Age (optional) <input type="number" min="0" max="200"></label>
+            <label for="age">Age (optional)</label>
+            <input type="text" id="age" min="0" max="200" placeholder="age">
 
             <label>which option best describes your current role?
                 <select name="currentRole">
@@ -35,7 +38,7 @@
                     <option value="other">Other</option>
                 </select>
             </label>
-        </main>
+        </form>
 
     </div>
 </body>
