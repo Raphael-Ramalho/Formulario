@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
     <title>Survey Form</title>
 </head>
 <body>
@@ -13,7 +14,7 @@
         <p>SurveyForm.org</p>
     </header>
 
-    <div>
+    <main>
         <header>
             <h1>Survey Form</h1>
             <p>Thank you for taking the time to help us improve the plataform</p>
@@ -53,8 +54,27 @@
                     <option value="openSource">Open Source</option>
                 </select>
             </label>
-        </form>
 
-    </div>
+            <fieldset>
+                <p>What you like to see improved? (Check all that apply)</p>
+                <label><input type="checkbox" name="checkbox" value="frontEndProjects">Front-end Projects</label>
+                <label><input type="checkbox" name="checkbox" value="backEndProjects">Back-end Projects</label>
+                <label><input type="checkbox" name="checkbox" value="dataVisualization">Data Visuualization</label>
+                <label><input type="checkbox" name="checkbox" value="challenges">Challenges</label>
+                <label><input type="checkbox" name="checkbox" value="openSouceCommunity">Open Source Community</label>
+                <label><input type="checkbox" name="checkbox" value="gitterHelpRooms">Gitter help rooms</label>
+                <label><input type="checkbox" name="checkbox" value="videos">Vídeos</label>
+                <label><input type="checkbox" name="checkbox" value="cityMeetups">City Meetups</label>
+                <label><input type="checkbox" name="checkbox" value="wiki">Wiki</label>
+                <label><input type="checkbox" name="checkbox" value="forum">Forum</label>
+                <label><input type="checkbox" name="checkbox" value="additionalCourses">Additional Courses</label>
+            </fieldset>
+
+            <label for="comments">Any comments or suggestions?</label>
+            <textarea name="comments" id="comments" cols="30" rows="10">Enter your comment here...</textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </main>
 </body>
 </html>
