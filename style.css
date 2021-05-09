@@ -3,14 +3,22 @@ body {
     background-size: cover;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 10px;
 }
 
-header img, header div {
+.main-header {
+    background-color: black;
+    padding: 8px 0px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
+}
+
+.main-header img, header div {
     height: 40px;
 }
 
-header div {
+.main-header div {
     display: inline-block;
     min-width: fit-content;
     vertical-align: top;
