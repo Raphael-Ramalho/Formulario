@@ -1,0 +1,22 @@
+body {
+    background-image: url(images/background_study_group.jpg);
+    background-size: cover;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px;
+}
+
+header img, header div {
+    height: 40px;
+}
+
+header div {
+    display: inline-block;
+    min-width: fit-content;
+    vertical-align: top;
+}
+
+h1 {
+   font-weight: bold;
+   padding-bottom: 0.3em;
+}
