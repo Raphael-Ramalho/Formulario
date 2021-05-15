@@ -76,12 +76,11 @@ h1 {
 }
 
 .form-container{
-    background-color: rgb(20, 0, 36);
-    opacity: 0.8;
+    background-color: rgb(20, 0, 36, 0.8);
     border-radius: 5px;
     padding: 40px;
 }
 
-.form-container form{
-    opacity: 1;
+label, textarea{
+    display: block;
 }
