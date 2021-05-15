@@ -6,22 +6,43 @@ body {
 }
 
 .main-header {
-    background-color: black;
+    display: flex;
+    align-items: center;
+    background: black;
     padding: 8px 0px;
-    position: fixed;
     top: 0px;
     left: 0px;
-
+    padding: 10px;
 }
 
-.main-header img, header div {
+.main-header img {
     height: 40px;
 }
 
-.main-header div {
+.logo-title {
     display: inline-block;
     min-width: fit-content;
     vertical-align: top;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.emote-button{
+    border-style: solid;
+    border-color: grey;
+    border-width: 2px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.change-view-button{
+    padding: 12px;
+    background-color: gray;
+    border-radius: 5px;
 }
 
 h1 {
