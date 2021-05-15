@@ -10,14 +10,13 @@
 </head>
 <body>
     <header class="main-header">
-        <div>
-            <img src="images/Logo.png" alt="Logo">
-            <div class="logo-title">
-                <h1>Survey form</h1>
-                <p>SurveyForm.org</p>
-            </div>
+        <img src="images/Logo.png" alt="Logo">
+        <div class="logo-text">
+            <h1>Survey form</h1>
+            <p class="logo-subtitle">SurveyForm.org</p>
         </div>
-        <a href="" class="emote-button">&#9825;</a>
+
+        <a href="" class="emote-button">🤍</a>
         <a href="" class="change-view-button">Change View</a>
         <a href="" class="sign-in-button">Sign Up</a>
         <a href="" class="log-in-button">Log In</a>
@@ -29,61 +28,56 @@
             <p>Thank you for taking the time to help us improve the plataform</p>
         </header>
 
-        <form action="">
-            <label for="name">Name</label>
-            <input type="text" name = "name" id="name" placeholder="Enter your name">
-
-            <label for="email">Email</label>
-            <input type="email" name = "email" id="email" placeholder="Enter your Email">
-
-            <label for="age">Age (optional)</label>
-            <input type="number" id="age" min="0" max="200" placeholder="Age">
-
-            <label for="currentRole">Which option best describes your current role?</label>
-            <select name="currentRole" id="currentRole">
-                <option value="student">Student</option>
-                <option value="fullTimeJob">Full Time Job</option>
-                <option value="fullTimeLearner">Full Time Learner</option>
-                <option value="preferNotToSay">Prefer not to say</option>
-                <option value="other">Other</option>
-            </select>
-
-            <fieldset>
-                <legend>Would you recommend this form to a friend?</legend>
-                <label><input type="radio" name="recommendation" value="definitely" checked>Definitely</label>
-                <label><input type="radio" name="recommendation" value="maybe">Maybe</label>
-                <label><input type="radio" name="recommendation" value="notSure">Not sure</label>
-            </fieldset>
-            
-            <label for="favoriteFeature"> What is your favorite feature?
-                <select name="favoriteFeature" id="favoriteFeature">
-                    <option value="challenges">Challenges</option>
-                    <option value="projects">Projects</option>
-                    <option value="Community">Community</option>
-                    <option value="openSource">Open Source</option>
+        <div class="form-container">
+            <form action="">
+                <label for="name">Name</label>
+                <input type="text" name = "name" id="name" placeholder="Enter your name">
+                <label for="email">Email</label>
+                <input type="email" name = "email" id="email" placeholder="Enter your Email">
+                <label for="age">Age (optional)</label>
+                <input type="number" id="age" min="0" max="200" placeholder="Age">
+                <label for="currentRole">Which option best describes your current role?</label>
+                <select name="currentRole" id="currentRole">
+                    <option value="student">Student</option>
+                    <option value="fullTimeJob">Full Time Job</option>
+                    <option value="fullTimeLearner">Full Time Learner</option>
+                    <option value="preferNotToSay">Prefer not to say</option>
+                    <option value="other">Other</option>
                 </select>
-            </label>
-
-            <fieldset>
-                <p>What you like to see improved? (Check all that apply)</p>
-                <label><input type="checkbox" name="checkbox" value="frontEndProjects">Front-end Projects</label>
-                <label><input type="checkbox" name="checkbox" value="backEndProjects">Back-end Projects</label>
-                <label><input type="checkbox" name="checkbox" value="dataVisualization">Data Visuualization</label>
-                <label><input type="checkbox" name="checkbox" value="challenges">Challenges</label>
-                <label><input type="checkbox" name="checkbox" value="openSouceCommunity">Open Source Community</label>
-                <label><input type="checkbox" name="checkbox" value="gitterHelpRooms">Gitter help rooms</label>
-                <label><input type="checkbox" name="checkbox" value="videos">Vídeos</label>
-                <label><input type="checkbox" name="checkbox" value="cityMeetups">City Meetups</label>
-                <label><input type="checkbox" name="checkbox" value="wiki">Wiki</label>
-                <label><input type="checkbox" name="checkbox" value="forum">Forum</label>
-                <label><input type="checkbox" name="checkbox" value="additionalCourses">Additional Courses</label>
-            </fieldset>
-
-            <label for="comments">Any comments or suggestions?</label>
-            <textarea name="comments" id="comments" cols="30" rows="10">Enter your comment here...</textarea>
-
-            <input type="submit" value="Submit">
-        </form>
+                <fieldset>
+                    <legend>Would you recommend this form to a friend?</legend>
+                    <label><input type="radio" name="recommendation" value="definitely" checked>Definitely</label>
+                    <label><input type="radio" name="recommendation" value="maybe">Maybe</label>
+                    <label><input type="radio" name="recommendation" value="notSure">Not sure</label>
+                </fieldset>
+            
+                <label for="favoriteFeature"> What is your favorite feature?
+                    <select name="favoriteFeature" id="favoriteFeature">
+                        <option value="challenges">Challenges</option>
+                        <option value="projects">Projects</option>
+                        <option value="Community">Community</option>
+                        <option value="openSource">Open Source</option>
+                    </select>
+                </label>
+                <fieldset>
+                    <p>What you like to see improved? (Check all that apply)</p>
+                    <label><input type="checkbox" name="checkbox" value="frontEndProjects">Front-end Projects</label>
+                    <label><input type="checkbox" name="checkbox" value="backEndProjects">Back-end Projects</label>
+                    <label><input type="checkbox" name="checkbox" value="dataVisualization">Data Visuualization</label>
+                    <label><input type="checkbox" name="checkbox" value="challenges">Challenges</label>
+                    <label><input type="checkbox" name="checkbox" value="openSouceCommunity">Open Source Community</label>
+                    <label><input type="checkbox" name="checkbox" value="gitterHelpRooms">Gitter help rooms</label>
+                    <label><input type="checkbox" name="checkbox" value="videos">Vídeos</label>
+                    <label><input type="checkbox" name="checkbox" value="cityMeetups">City Meetups</label>
+                    <label><input type="checkbox" name="checkbox" value="wiki">Wiki</label>
+                    <label><input type="checkbox" name="checkbox" value="forum">Forum</label>
+                    <label><input type="checkbox" name="checkbox" value="additionalCourses">Additional Courses</label>
+                </fieldset>
+                <label for="comments">Any comments or suggestions?</label>
+                <textarea name="comments" id="comments" cols="30" rows="10">Enter your comment here...</textarea>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
     </div>
 </body>
 </html>

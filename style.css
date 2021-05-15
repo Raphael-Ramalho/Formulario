@@ -1,14 +1,16 @@
 body {
     background-image: url(images/background_study_group.jpg);
-    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
 }
 
 .main-header {
     display: flex;
     align-items: center;
-    background: black;
+    background: rgb(20, 0, 36);
     padding: 8px 0px;
     top: 0px;
     left: 0px;
@@ -19,16 +21,25 @@ body {
     height: 40px;
 }
 
-.logo-title {
+.logo-text {
     display: inline-block;
     min-width: fit-content;
     vertical-align: top;
+    line-height: 0.8em;
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.logo-subtitle{
+    font-size: 0.8em;
+    color: grey;
 }
 
 a {
     color: white;
     text-decoration: none;
     margin-left: 10px;
+    font-size: 0.8em;
 }
 
 .emote-button{
@@ -36,16 +47,41 @@ a {
     border-color: grey;
     border-width: 2px;
     border-radius: 5px;
-    padding: 10px;
+    padding: 12px;
 }
 
-.change-view-button{
-    padding: 12px;
-    background-color: gray;
+.change-view-button, .log-in-button{
+    padding: 14px 17px;
+    background-color: rgba(117, 114, 124, 0.623);
     border-radius: 5px;
+}
+
+.sign-in-button{
+    padding: 14px 17px;
+    background-color: rgb(75, 199, 75);
+    border-radius: 5px;
+    color: black;
 }
 
 h1 {
    font-weight: bold;
    padding-bottom: 0.3em;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 600px;
+}
+
+.form-container{
+    background-color: rgb(20, 0, 36);
+    opacity: 0.8;
+    border-radius: 5px;
+    padding: 40px;
+}
+
+.form-container form{
+    opacity: 1;
 }
