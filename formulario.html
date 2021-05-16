@@ -23,27 +23,35 @@
     </header>
 
     <div class="container">
-        <header>
+        <header class="container-header">
             <h1>Survey Form</h1>
             <p>Thank you for taking the time to help us improve the plataform</p>
         </header>
 
         <div class="form-container">
             <form action="">
-                <label for="name">Name</label>
-                <input type="text" name = "name" id="name" placeholder="Enter your name">
-                <label for="email">Email</label>
-                <input type="email" name = "email" id="email" placeholder="Enter your Email">
-                <label for="age">Age (optional)</label>
-                <input type="number" id="age" min="0" max="200" placeholder="Age">
-                <label for="currentRole">Which option best describes your current role?</label>
-                <select name="currentRole" id="currentRole">
-                    <option value="student">Student</option>
-                    <option value="fullTimeJob">Full Time Job</option>
-                    <option value="fullTimeLearner">Full Time Learner</option>
-                    <option value="preferNotToSay">Prefer not to say</option>
-                    <option value="other">Other</option>
-                </select>
+                <fieldset>
+                    <label for="name">Name</label>
+                    <input type="text" name = "name" id="name" placeholder="Enter your name">
+                </fieldset>
+                <fieldset>
+                    <label for="email">Email</label>
+                    <input type="email" name = "email" id="email" placeholder="Enter your Email">
+                </fieldset>
+                <fieldset>
+                    <label for="age">Age (optional)</label>
+                    <input type="number" id="age" min="0" max="200" placeholder="Age">
+                </fieldset>
+                <fieldset>
+                    <label for="currentRole">Which option best describes your current role?</label>
+                    <select name="currentRole" id="currentRole">
+                        <option value="student">Student</option>
+                        <option value="fullTimeJob">Full Time Job</option>
+                        <option value="fullTimeLearner">Full Time Learner</option>
+                        <option value="preferNotToSay">Prefer not to say</option>
+                        <option value="other">Other</option>
+                    </select>
+                </fieldset>
                 <fieldset>
                     <legend>Would you recommend this form to a friend?</legend>
                     <label><input type="radio" name="recommendation" value="definitely" checked>Definitely</label>
@@ -51,13 +59,15 @@
                     <label><input type="radio" name="recommendation" value="notSure">Not sure</label>
                 </fieldset>
             
-                <label for="favoriteFeature"> What is your favorite feature?</label>
-                <select name="favoriteFeature" id="favoriteFeature">
-                    <option value="challenges">Challenges</option>
-                    <option value="projects">Projects</option>
-                    <option value="Community">Community</option>
-                    <option value="openSource">Open Source</option>
-                </select>
+                <fieldset>
+                    <label for="favoriteFeature"> What is your favorite feature?</label>
+                    <select name="favoriteFeature" id="favoriteFeature">
+                        <option value="challenges">Challenges</option>
+                        <option value="projects">Projects</option>
+                        <option value="Community">Community</option>
+                        <option value="openSource">Open Source</option>
+                    </select>
+                </fieldset>
                 
                 <fieldset>
                     <p>What you like to see improved? (Check all that apply)</p>
@@ -73,8 +83,10 @@
                     <label><input type="checkbox" name="checkbox" value="forum">Forum</label>
                     <label><input type="checkbox" name="checkbox" value="additionalCourses">Additional Courses</label>
                 </fieldset>
-                <label for="comments">Any comments or suggestions?</label>
-                <textarea name="comments" id="comments" cols="30" rows="10">Enter your comment here...</textarea>
+                <fieldset>
+                    <label for="comments">Any comments or suggestions?</label>
+                    <textarea name="comments" id="comments" cols="30" rows="10">Enter your comment here...</textarea>
+                </fieldset>
                 <input type="submit" value="Submit">
             </form>
         </div>

@@ -30,9 +30,14 @@ body {
     margin-left: 10px;
 }
 
+.logo-text h1{
+    font-weight: bold;
+}
+
 .logo-subtitle{
     font-size: 0.8em;
     color: grey;
+    padding-top: 0.3em;
 }
 
 a {
@@ -63,16 +68,27 @@ a {
     color: black;
 }
 
-h1 {
-   font-weight: bold;
-   padding-bottom: 0.3em;
-}
-
 .container{
     display: flex;
     flex-direction: column;
     margin: auto;
-    width: 600px;
+    width: 700px;
+}
+
+.container-header{
+    text-align: center;
+    padding: 50px 30px 30px 30px ;
+}
+
+.container-header h1{
+    font-size: 1.8em;
+    padding-bottom: 0.3em;
+}
+
+.container-header p{
+    font-style: italic;
+    font-weight: 200;
+    font-family: sans-serif;
 }
 
 .form-container{
@@ -83,4 +99,9 @@ h1 {
 
 label, textarea{
     display: block;
+    margin-bottom: 10px;
+}
+
+fieldset{
+    margin-bottom: 20px;
 }
