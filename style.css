@@ -16,6 +16,9 @@ body {
     top: 0px;
     left: 0px;
     padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .main-header img {
@@ -62,6 +65,10 @@ a {
     border-radius: 5px;
 }
 
+.log-in-button{
+    margin-right: 20px;
+}
+
 .sign-in-button{
     padding: 14px 17px;
     background-color: rgb(75, 199, 75);
@@ -78,7 +85,7 @@ a {
 
 .container-header{
     text-align: center;
-    padding: 50px 30px 30px 30px ;
+    padding: 100px 30px 30px 30px ;
 }
 
 .container-header h1{
