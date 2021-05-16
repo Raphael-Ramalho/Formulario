@@ -32,19 +32,19 @@
             <form action="">
                 <fieldset>
                     <label for="name">Name</label>
-                    <input type="text" name = "name" id="name" placeholder="Enter your name">
+                    <input type="text" name = "name" id="name" placeholder="Enter your name" class="input-area">
                 </fieldset>
                 <fieldset>
                     <label for="email">Email</label>
-                    <input type="email" name = "email" id="email" placeholder="Enter your Email">
+                    <input type="email" name = "email" id="email" placeholder="Enter your Email" class="input-area">
                 </fieldset>
                 <fieldset>
-                    <label for="age">Age (optional)</label>
-                    <input type="number" id="age" min="0" max="200" placeholder="Age">
+                    <label for="age">Age <span>(optional)</span></label>
+                    <input type="number" id="age" min="0" max="200" placeholder="Age" class="input-area">
                 </fieldset>
                 <fieldset>
                     <label for="currentRole">Which option best describes your current role?</label>
-                    <select name="currentRole" id="currentRole">
+                    <select name="currentRole" id="currentRole" class="selection">
                         <option value="student">Student</option>
                         <option value="fullTimeJob">Full Time Job</option>
                         <option value="fullTimeLearner">Full Time Learner</option>
@@ -61,7 +61,7 @@
             
                 <fieldset>
                     <label for="favoriteFeature"> What is your favorite feature?</label>
-                    <select name="favoriteFeature" id="favoriteFeature">
+                    <select name="favoriteFeature" id="favoriteFeature" class="selection">
                         <option value="challenges">Challenges</option>
                         <option value="projects">Projects</option>
                         <option value="Community">Community</option>
@@ -70,7 +70,7 @@
                 </fieldset>
                 
                 <fieldset>
-                    <p>What you like to see improved? (Check all that apply)</p>
+                    <legend>What you like to see improved? <span>(Check all that apply)</span></legend>
                     <label><input type="checkbox" name="checkbox" value="frontEndProjects">Front-end Projects</label>
                     <label><input type="checkbox" name="checkbox" value="backEndProjects">Back-end Projects</label>
                     <label><input type="checkbox" name="checkbox" value="dataVisualization">Data Visuualization</label>
@@ -87,7 +87,7 @@
                     <label for="comments">Any comments or suggestions?</label>
                     <textarea name="comments" id="comments" cols="30" rows="10">Enter your comment here...</textarea>
                 </fieldset>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" class="submit-button">
             </form>
         </div>
     </div>
