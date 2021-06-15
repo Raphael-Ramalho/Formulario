@@ -80,7 +80,6 @@ a {
     display: flex;
     flex-direction: column;
     margin: auto;
-    width: 700px;
 }
 
 .container-header{
