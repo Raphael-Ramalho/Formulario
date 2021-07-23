@@ -8,6 +8,11 @@ body {
     font-size: 20px;
 }
 
+h2{
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
 .main-header {
     display: flex;
     align-items: center;
