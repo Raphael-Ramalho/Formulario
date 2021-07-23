@@ -27,7 +27,7 @@ fieldset{
 
 span{
     font-size: smaller;
-    color: rgb(170, 170, 170);
+    line-height: 1.7em;
 }
 
 label, textarea, legend{
@@ -173,4 +173,14 @@ textarea{
     color: white;
     margin-top: 20px;
 }
+
+.error > input {
+    border-style: solid;
+    border-color: rgb(255, 81, 81);
+}
+
+.error {
+    color: rgb(255, 81, 81);
+}
+
 

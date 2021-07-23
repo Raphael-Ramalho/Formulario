@@ -41,11 +41,18 @@ const erroFunction = (input) => {
             const inputType = input.dataset.tipo
             
             mensagem = errorMessages[inputType][error]
+            errorDisplay(input, mensagem)
+            return
         }
         input.setCustomValidity(mensagem)
     })
 }
 
+const errorDisplay = (input, mensagem) => {
+    const inputParent = input.parentElement
+    inputParent.classList.add("error")
+    inputParent.querySelector("span").innerText = mensagem
+}
 
 
 
