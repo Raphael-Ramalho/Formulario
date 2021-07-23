@@ -1,67 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="responsivo.css">
-    <title>Survey Form</title>
-</head>
-<body>
-    <header class="main-header">
-        <img src="images/Logo.png" alt="Logo">
-        <div class="logo-text">
-            <h1>Survey form</h1>
-            <p class="logo-subtitle">SurveyForm.org</p>
-        </div>
 
-        <a href="" class="emote-button">🤍</a>
-        <a href="" class="change-view-button">Change View</a>
-        <a href="" class="sign-in-button">Sign Up</a>
-        <a href="" class="log-in-button">Log In</a>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsivo.css">
+  <title>Survey Form</title>
+</head>
+
+<body>
+  <header class="main-header">
+    <img src="images/Logo.png" alt="Logo">
+    <div class="logo-text">
+      <h1>Survey form</h1>
+      <p class="logo-subtitle">SurveyForm.org</p>
+    </div>
+
+    <a href="" class="emote-button">🤍</a>
+    <a href="" class="change-view-button">Change View</a>
+    <a href="" class="sign-in-button">Sign Up</a>
+    <a href="" class="log-in-button">Log In</a>
+  </header>
+
+  <div class="container">
+    <header class="container-header">
+      <h1>Sign up at Survey form</h1>
     </header>
 
-    <div class="container">
-        <header class="container-header">
-            <h1>Sign up at Survey form</h1>
-        </header>
+    <div class="form-container">
+      <form action="">
+        <h2>Complete your registration</h2>
+        <fieldset>
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" placeholder="Enter your name" class="input-area" data-tipo="name" required>
+        </fieldset>
+        <fieldset>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="Enter your Email" class="input-area" data-tipo="email" required>
+        </fieldset>
+        <fieldset>
+          <label for="birth-date">Birth date</label>
+          <input type="date" id="birth-date" class="input-area" data-tipo="birth-date" required>
+        </fieldset>
 
-        <div class="form-container">
-            <form action="">
-                <h2>Complete your registration</h2>
-                <fieldset>
-                    <label for="name">Name</label>
-                    <input type="text" name = "name" id="name" placeholder="Enter your name" class="input-area" required>
-                </fieldset>
-                <fieldset>
-                    <label for="email">Email</label>
-                    <input type="email" name = "email" id="email" placeholder="Enter your Email" class="input-area" required>
-                </fieldset>
-                <fieldset>
-                    <label for="Birth-date">Birth date</label>
-                    <input type="date" id="Birth-date" class="input-area" required>
-                </fieldset>
-
-                <div class="line-container"><div class="line"></div></div>
-
-                <fieldset>
-                    <label for="cep">CEP</label>
-                    <input type="number" id="cep" class="input-area" placeholder="Enter your CEP" required>
-                </fieldset>
-                <fieldset>
-                    <label for="city">City</label>
-                    <input type="text" id="city" class="input-area" placeholder="Enter your city" required>
-                </fieldset>
-                <fieldset>
-                    <label for="address">Address</label>
-                    <input type="text" id="address" class="input-area" placeholder="Enter your address" required>
-                </fieldset>
-
-                <input type="submit" value="Submit" class="submit-button">
-            </form>
+        <div class="line-container">
+          <div class="line"></div>
         </div>
+
+        <fieldset>
+          <label for="cep">CEP</label>
+          <input type="number" id="cep" class="input-area" placeholder="Enter your CEP" data-tipo="cep" required>
+        </fieldset>
+        <fieldset>
+          <label for="city">City</label>
+          <input type="text" id="city" class="input-area" placeholder="Enter your city" data-tipo="city" required>
+        </fieldset>
+        <fieldset>
+          <label for="address">Address</label>
+          <input type="text" id="address" class="input-area" placeholder="Enter your address" data-tipo="address" required>
+        </fieldset>
+
+        <input type="submit" value="Submit" class="submit-button">
+      </form>
     </div>
+  </div>
+  <script src="js/index.js"></script>
 </body>
+
 </html>
