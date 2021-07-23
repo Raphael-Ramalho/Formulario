@@ -43,39 +43,22 @@
                     <label for="Birth-date">Birth date</label>
                     <input type="date" id="Birth-date" class="input-area" required>
                 </fieldset>
+
+                <div class="line-container"><div class="line"></div></div>
+
                 <fieldset>
-                    <label for="currentRole">Which option best describes your current role?</label>
-                    <select name="currentRole" id="currentRole" class="selection">
-                        <option value="student">Student</option>
-                        <option value="fullTimeJob">Full Time Job</option>
-                        <option value="fullTimeLearner">Full Time Learner</option>
-                        <option value="preferNotToSay">Prefer not to say</option>
-                        <option value="other">Other</option>
-                    </select>
+                    <label for="cep">CEP</label>
+                    <input type="number" id="cep" class="input-area" placeholder="Enter your CEP" required>
                 </fieldset>
                 <fieldset>
-                    <label for="favoriteFeature"> What is your favorite feature?</label>
-                    <select name="favoriteFeature" id="favoriteFeature" class="selection">
-                        <option value="challenges">Challenges</option>
-                        <option value="projects">Projects</option>
-                        <option value="Community">Community</option>
-                        <option value="openSource">Open Source</option>
-                    </select>
-                </fieldset>
-                
-                <fieldset>
-                    <legend>What you like to see improved? <span>(Check all that apply)</span></legend>
-                    <label><input type="checkbox" name="checkbox" value="frontEndProjects">Front-end Projects</label>
-                    <label><input type="checkbox" name="checkbox" value="backEndProjects">Back-end Projects</label>
-                    <label><input type="checkbox" name="checkbox" value="dataVisualization">Data Visuualization</label>
+                    <label for="city">City</label>
+                    <input type="text" id="city" class="input-area" placeholder="Enter your city" required>
                 </fieldset>
                 <fieldset>
-                    <label for="comments">Any comments or suggestions?</label>
-                    <textarea name="comments" id="comments" cols="30" rows="10">Enter your comment here...</textarea>
+                    <label for="address">Address</label>
+                    <input type="text" id="address" class="input-area" placeholder="Enter your address" required>
                 </fieldset>
-                <fieldset>
-                    <label for=""></label>
-                </fieldset>
+
                 <input type="submit" value="Submit" class="submit-button">
             </form>
         </div>

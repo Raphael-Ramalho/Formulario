@@ -9,8 +9,38 @@ body {
 }
 
 h2{
-    font-size: 1.2em;
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 0.8em;
+}
+
+fieldset{
     margin-bottom: 20px;
+}
+
+span{
+    font-size: smaller;
+    color: rgb(170, 170, 170);
+}
+
+label, textarea, legend{
+    display: block;
+    margin-bottom: 10px;
+}
+
+textarea{
+    width: 96%;
+    height: 100px;
+    border-style: none;
+    border-radius: 5px;
+    padding: 2%;
 }
 
 .main-header {
@@ -47,13 +77,6 @@ h2{
     font-size: 0.8em;
     color: grey;
     padding-top: 0.3em;
-}
-
-a {
-    color: white;
-    text-decoration: none;
-    margin-left: 10px;
-    font-size: 0.8em;
 }
 
 .emote-button{
@@ -103,24 +126,11 @@ a {
     font-family: sans-serif;
 }
 
-span{
-    font-size: smaller;
-    color: rgb(170, 170, 170);
-}
-
 .form-container{
     background-color: rgb(20, 0, 36, 0.8);
     border-radius: 5px;
     padding: 40px;
-}
-
-label, textarea, legend{
-    display: block;
-    margin-bottom: 10px;
-}
-
-fieldset{
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .input-area {
@@ -139,12 +149,18 @@ fieldset{
     border-style: none;
 }
 
-textarea{
-    width: 96%;
-    height: 100px;
-    border-style: none;
-    border-radius: 5px;
-    padding: 2%;
+.line-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.line{
+    background-color: white;
+    height: 1px;
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 25px;
 }
 
 .submit-button{
@@ -155,4 +171,6 @@ textarea{
     background-color: rgb(75, 199, 75);
     border-style: none;
     color: white;
+    margin-top: 20px;
 }
+
