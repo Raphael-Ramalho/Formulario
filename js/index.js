@@ -2,14 +2,17 @@ const inputs = document.querySelectorAll("input")
 
 inputs.forEach((input)=>{
     input.addEventListener("blur", (evento)=>{
+        if(input.dataset.tipo == "birth"){
+            verificaIdade(input)
+        }
         erroFunction(evento.target)
     })
 })
 
 const possibleErros = [
-    "customError",
+    "valueMissing",
     "patternMismatch",
-    "valueMissing"
+    "customError"
 ]
 
 const errorMessages = {
@@ -21,7 +24,8 @@ const errorMessages = {
         patternMismatch: "O email digitado não é valido."
     },
     birth: {
-        valueMissing: "O campo birth date não pode ficar vazio."
+        valueMissing: "O campo birth date não pode ficar vazio.",
+        customError: "A pessoa cadastrada precisa ser maior de idade."
     },
     cep: {
         valueMissing: "O campo cep não pode ficar vazio."
@@ -37,7 +41,6 @@ const errorMessages = {
 const erroFunction = (input) => {
     let mensagem = ""
     possibleErros.forEach(error => {
-        console.log(input.validity[error])
         if(input.validity[error]){
             const inputType = input.dataset.tipo            
             mensagem = errorMessages[inputType][error]
@@ -59,5 +62,15 @@ const errorDisplayOFF = (input) => {
     input.parentElement.classList.remove("error")
     input.parentElement.querySelector("span").innerText = ""
 }
+
+const verificaIdade = (input) => {
+    console.log(input.value) 
+    inputDate = new Date(input.value)
+    currentDate = new Date()
+    
+}
+
+
+
 
 
