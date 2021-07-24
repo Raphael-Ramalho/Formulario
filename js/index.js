@@ -77,7 +77,6 @@ const verificaIdade = (input) => {
     input.setCustomValidity("")
 }
 
-
 const pegaCEP = async (input) => {
     const cep = input.value.replace(/[^0-9]/g, "")
     const respostaServidor = await fetch(`https://viacep.com.br/ws/${cep}/json/`, {
@@ -89,10 +88,12 @@ const pegaCEP = async (input) => {
     })
     const resposta = respostaServidor.json()
     preencheDadosAutomaticamente(resposta)
+    console.log(resposta.cep)
 }
 
 const preencheDadosAutomaticamente = (resposta) => {
-    
+    const city = document.querySelector("[data-tipo='city']")
+    city.value = resposta.localidade
 }
 
 
