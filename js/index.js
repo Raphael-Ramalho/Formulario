@@ -18,7 +18,7 @@ const errorMessages = {
     },
     email: {
         valueMissing: "O campo email não pode ficar vazio.",
-        customError: "O email digitado não é valido."
+        patternMismatch: "O email digitado não é valido."
     },
     birth: {
         valueMissing: "O campo birth date não pode ficar vazio."
@@ -35,25 +35,29 @@ const errorMessages = {
 }
 
 const erroFunction = (input) => {
+    let mensagem = ""
     possibleErros.forEach(error => {
-        let mensagem = ""
+        console.log(input.validity[error])
         if(input.validity[error]){
-            const inputType = input.dataset.tipo
-            
+            const inputType = input.dataset.tipo            
             mensagem = errorMessages[inputType][error]
-            errorDisplay(input, mensagem)
+            errorDisplayON(input, mensagem)
             return
-        }
-        input.setCustomValidity(mensagem)
+        } 
     })
+    if(!mensagem){
+        errorDisplayOFF(input)
+    }
 }
 
-const errorDisplay = (input, mensagem) => {
-    const inputParent = input.parentElement
-    inputParent.classList.add("error")
-    inputParent.querySelector("span").innerText = mensagem
+const errorDisplayON = (input, mensagem) => {
+    input.parentElement.classList.add("error")
+    input.parentElement.querySelector("span").innerText = mensagem
 }
 
-
+const errorDisplayOFF = (input) => {
+    input.parentElement.classList.remove("error")
+    input.parentElement.querySelector("span").innerText = ""
+}
 
 
