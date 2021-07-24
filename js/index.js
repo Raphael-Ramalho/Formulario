@@ -78,10 +78,21 @@ const verificaIdade = (input) => {
 }
 
 
-function pegaCEP(input) {
-    let cep = input.value.replace(/[^0-9]/g, "")
-    console.log(cep)
-    //const resposta = await fetch()
+const pegaCEP = async (input) => {
+    const cep = input.value.replace(/[^0-9]/g, "")
+    const respostaServidor = await fetch(`https://viacep.com.br/ws/${cep}/json/`, {
+        method: "GET",
+        mode: "cors",
+        headers: {
+            "content-type":"application/json;charset=utf-8"
+        }
+    })
+    const resposta = respostaServidor.json()
+    preencheDadosAutomaticamente(resposta)
+}
+
+const preencheDadosAutomaticamente = (resposta) => {
+    
 }
 
 
