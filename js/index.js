@@ -3,7 +3,10 @@ const inputs = document.querySelectorAll("input")
 inputs.forEach((input)=>{
     input.addEventListener("blur", (evento)=>{
         if(input.dataset.tipo == "birth"){
-            verificaIdade(input)
+            verificaIdade(evento.target)
+        }
+        if(input.dataset.tipo == "cep"){
+            pegaCEP(evento.target)
         }
         erroFunction(evento.target)
     })
@@ -64,7 +67,6 @@ const errorDisplayOFF = (input) => {
 }
 
 const verificaIdade = (input) => {
-    //console.log(input.value) 
     inputDate = new Date(input.value)
     currentDate = new Date()
     referenceDate = new Date(currentDate.getFullYear() - 18, currentDate.getMonth(), currentDate.getDate())
@@ -76,6 +78,9 @@ const verificaIdade = (input) => {
 }
 
 
-
+const pegaCEP = async (input) => {
+    let cep = input.value.replace("[^0-9]", "")
+    const resposta = await fetch()
+}
 
 
