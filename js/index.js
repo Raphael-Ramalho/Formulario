@@ -64,10 +64,15 @@ const errorDisplayOFF = (input) => {
 }
 
 const verificaIdade = (input) => {
-    console.log(input.value) 
+    //console.log(input.value) 
     inputDate = new Date(input.value)
     currentDate = new Date()
-    
+    referenceDate = new Date(currentDate.getFullYear() - 18, currentDate.getMonth(), currentDate.getDate())
+    if(inputDate >= referenceDate){
+        input.setCustomValidity("A pessoa cadastrada precisa ser maior de idade.")
+        return
+    }
+    input.setCustomValidity("")
 }
 
 
