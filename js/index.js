@@ -78,9 +78,10 @@ const verificaIdade = (input) => {
 }
 
 
-const pegaCEP = async (input) => {
-    let cep = input.value.replace("[^0-9]", "")
-    const resposta = await fetch()
+function pegaCEP(input) {
+    let cep = input.value.replace(/[^0-9]/g, "")
+    console.log(cep)
+    //const resposta = await fetch()
 }
 
 
