@@ -5,10 +5,14 @@ inputs.forEach((input)=>{
         if(input.dataset.tipo == "birth"){
             verificaIdade(evento.target)
         }
-        if(input.dataset.tipo == "cep"){
-            pegaCEP(evento.target)
+
+        const HasAnError = false
+
+        erroFunction(evento.target, HasAnError)
+
+        if(!HasAnError && input.dataset.tipo == "cep"){
+            pegaCEP(input)
         }
-        erroFunction(evento.target)
     })
 })
 
@@ -31,7 +35,9 @@ const errorMessages = {
         customError: "A pessoa cadastrada precisa ser maior de idade."
     },
     cep: {
-        valueMissing: "O campo cep não pode ficar vazio."
+        valueMissing: "O campo cep não pode ficar vazio.",
+        patternMismatch: "O CEP digitado não é valido.",
+        customError: "Não foi possível buscar o CEP"
     },
     city: {
         valueMissing: "O campo city não pode ficar vazio."
@@ -43,16 +49,20 @@ const errorMessages = {
 
 const erroFunction = (input) => {
     let mensagem = ""
+
     possibleErros.forEach(error => {
         if(input.validity[error]){
             const inputType = input.dataset.tipo            
             mensagem = errorMessages[inputType][error]
             errorDisplayON(input, mensagem)
-            return
+            HasAnError = true
+            return HasAnError
         } 
     })
+
     if(!mensagem){
         errorDisplayOFF(input)
+        return 
     }
 }
 
@@ -89,7 +99,15 @@ const pegaCEP = (input) => {
         resposta => resposta.json()
     ).then(
         resposta => {
-            preencheDadosAutomaticamente(resposta)
+            if(resposta.erro){
+                input.setCustomValidity("Não foi possível buscar o CEP")
+                mensagem = errorMessages.cep.customError
+                errorDisplayON(input, mensagem)
+            } else {
+                input.setCustomValidity("")
+                preencheDadosAutomaticamente(resposta)
+                errorDisplayOFF(input)
+            }
         }
     )
 }
