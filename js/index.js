@@ -97,10 +97,9 @@ const pegaCEP = async(input) => {// o await pode ser usado dentro de funções m
         const res = await fetch(url, options)
         const data = await res.json()
         dataTeste(input, data)
-    }catch(err){ //se esse catch n estivesse presente e a url estivesse erroneamente escrita, os campos city/address não seriam preenchidos e nenhum erro apareceria no console, dificultado a compreenção do que aconteceu.
+    }catch(err){ //se esse catch n estivesse presente e a url estivesse erroneamente escrita, os campos city/address não seriam preenchidos e nenhum erro apareceria no console, dificultado a compreenção do que aconteceu. Para capturar o erro 404(not found) use !res.ok
         console.error(err)
     }
-
 }
 
 const dataTeste = (input, data) => {
