@@ -2,15 +2,7 @@ const inputs = document.querySelectorAll("input")
 
 inputs.forEach((input)=>{
     input.addEventListener("blur", (evento)=>{
-        if(input.dataset.tipo == "birth"){
-            verificaIdade(evento.target)
-        }
-
-        erroFunction(evento.target)
-        if(validInput && input.dataset.tipo == "cep"){
-            console.log(`dentro do if pegaCEP: ${validInput}`)
-            pegaCEP(input)
-        }
+        validacao(evento.target)
     })
 })
 
@@ -45,8 +37,12 @@ const errorMessages = {
     }
 }
 
-const erroFunction = (input) => {
+const validacao = (input) => {
     let mensagem = ""
+
+    if(input.dataset.tipo == "birth"){
+        verificaIdade(input)
+    }
 
     possibleErros.forEach(error => {
         if(input.validity[error]){
@@ -59,6 +55,9 @@ const erroFunction = (input) => {
 
     if(!mensagem){
         errorDisplayOFF(input)
+        if(input.dataset.tipo == "cep"){
+            pegaCEP(input)
+        }
     }
 }
 
@@ -83,7 +82,7 @@ const verificaIdade = (input) => {
     input.setCustomValidity("")
 }
 
-//cep valido ppara teste => 28610-175
+//cep valido para teste => 05501-010
 const pegaCEP = (input) => {
     const cep = input.value.replace(/[^0-9]/g, "")
     const url = `https://viacep.com.br/ws/${cep}/json/`
