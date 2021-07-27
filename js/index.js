@@ -6,11 +6,9 @@ inputs.forEach((input)=>{
             verificaIdade(evento.target)
         }
 
-        const HasAnError = false
-
-        erroFunction(evento.target, HasAnError)
-
-        if(!HasAnError && input.dataset.tipo == "cep"){
+        erroFunction(evento.target)
+        if(validInput && input.dataset.tipo == "cep"){
+            console.log(`dentro do if pegaCEP: ${validInput}`)
             pegaCEP(input)
         }
     })
@@ -55,14 +53,12 @@ const erroFunction = (input) => {
             const inputType = input.dataset.tipo            
             mensagem = errorMessages[inputType][error]
             errorDisplayON(input, mensagem)
-            HasAnError = true
-            return HasAnError
+            return 
         } 
     })
 
     if(!mensagem){
         errorDisplayOFF(input)
-        return 
     }
 }
 
@@ -87,28 +83,32 @@ const verificaIdade = (input) => {
     input.setCustomValidity("")
 }
 
+//cep valido ppara teste => 28610-175
 const pegaCEP = (input) => {
     const cep = input.value.replace(/[^0-9]/g, "")
-    fetch(`https://viacep.com.br/ws/${cep}/json/`, {
+    const url = `https://viacep.com.br/ws/${cep}/json/`
+    const options = {
         method: "GET",
         mode: "cors",
         headers: {
             "content-type":"application/json;charset=utf-8"
         }
-    }).then(
-        resposta => resposta.json()
+    }
+    fetch(url, options).then(
+        resposta => {return resposta.json()}
     ).then(
         resposta => {
-            if(resposta.erro){
-                input.setCustomValidity("Não foi possível buscar o CEP")
-                mensagem = errorMessages.cep.customError
-                errorDisplayON(input, mensagem)
-            } else {
-                input.setCustomValidity("")
-                preencheDadosAutomaticamente(resposta)
-                errorDisplayOFF(input)
-            }
+            input.setCustomValidity("")
+            preencheDadosAutomaticamente(resposta)
+            errorDisplayOFF(input)
         }
+    ).catch(
+        (error)=>{
+            console.error(error)
+            input.setCustomValidity("Não foi possível buscar o CEP")
+            mensagem = errorMessages.cep.customError
+            errorDisplayON(input, mensagem)
+        }    
     )
 }
 
