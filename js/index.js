@@ -97,17 +97,17 @@ const pegaCEP = (input) => {
         resposta => {return resposta.json()}
     ).then(
         resposta => {
-            input.setCustomValidity("")
-            preencheDadosAutomaticamente(resposta)
-            errorDisplayOFF(input)
+            if(resposta.erro){
+                input.setCustomValidity("Não foi possível buscar o CEP")
+                mensagem = errorMessages.cep.customError
+                errorDisplayON(input, mensagem)
+            }else{
+                input.setCustomValidity("")
+                preencheDadosAutomaticamente(resposta)
+                errorDisplayOFF(input)
+            }
+
         }
-    ).catch(
-        (error)=>{
-            console.error(error)
-            input.setCustomValidity("Não foi possível buscar o CEP")
-            mensagem = errorMessages.cep.customError
-            errorDisplayON(input, mensagem)
-        }    
     )
 }
 
