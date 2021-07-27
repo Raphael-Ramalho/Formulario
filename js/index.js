@@ -83,39 +83,41 @@ const verificaIdade = (input) => {
 }
 
 //cep valido para teste => 05501-010
-const pegaCEP = (input) => {
+const pegaCEP = async(input) => {// o await pode ser usado dentro de funções marcadas como async
     const cep = input.value.replace(/[^0-9]/g, "")
-    const url = `https://viacep.com.br/ws/${cep}/json/`
-    const options = {
-        method: "GET",
-        mode: "cors",
-        headers: {
-            "content-type":"application/json;charset=utf-8"
-        }
-    }
-    fetch(url, options).then(
-        resposta => {return resposta.json()}
-    ).then(
-        resposta => {
-            if(resposta.erro){
-                input.setCustomValidity("Não foi possível buscar o CEP")
-                mensagem = errorMessages.cep.customError
-                errorDisplayON(input, mensagem)
-            }else{
-                input.setCustomValidity("")
-                preencheDadosAutomaticamente(resposta)
-                errorDisplayOFF(input)
+    try{
+        const url = `https://viacep.com.br/ws/${cep}/json/`
+        const options = {
+            method: "GET",
+            mode: "cors",
+            headers: {
+                "content-type":"application/json;charset=utf-8"
             }
-
         }
-    )
+        const res = await fetch(url, options)
+        const data = await res.json()
+        dataTeste(input, data)
+    }catch(err){ //se esse catch n estivesse presente e a url estivesse erroneamente escrita, os campos city/address não seriam preenchidos e nenhum erro apareceria no console, dificultado a compreenção do que aconteceu.
+        console.error(err)
+    }
+
 }
 
-const preencheDadosAutomaticamente = (resposta) => {
+const dataTeste = (input, data) => {
+    if(data.erro){
+        input.setCustomValidity("Não foi possível buscar o CEP")
+        mensagem = errorMessages.cep.customError
+        errorDisplayON(input, mensagem)
+    }else{
+        input.setCustomValidity("")
+        preencheDadosAutomaticamente(data)
+        errorDisplayOFF(input)
+    }
+}
+
+const preencheDadosAutomaticamente = (data) => {
     const city = document.querySelector("[data-tipo='city']")
     const address = document.querySelector("[data-tipo='address']")
-    city.value = resposta.localidade
-    address.value = resposta.logradouro
+    city.value = data.localidade
+    address.value = data.logradouro
 }
-
-
