@@ -83,7 +83,7 @@ const verificaIdade = (input) => {
 }
 
 //cep valido para teste => 05501-010
-const pegaCEP = async(input) => {// o await pode ser usado dentro de funções marcadas como async
+const pegaCEP = async(input) => {// o await pode ser usado dentro de funções marcadas como async. Funções marcadas com async retornam uma promisse.
     const cep = input.value.replace(/[^0-9]/g, "")
     try{
         const url = `https://viacep.com.br/ws/${cep}/json/`
@@ -96,21 +96,19 @@ const pegaCEP = async(input) => {// o await pode ser usado dentro de funções m
         }
         const res = await fetch(url, options)
         const data = await res.json()
-        dataTeste(input, data)
-    }catch(err){ //se esse catch n estivesse presente e a url estivesse erroneamente escrita, os campos city/address não seriam preenchidos e nenhum erro apareceria no console, dificultado a compreenção do que aconteceu. Para capturar o erro 404(not found) use !res.ok
-        console.error(err)
-    }
-}
 
-const dataTeste = (input, data) => {
-    if(data.erro){
-        input.setCustomValidity("Não foi possível buscar o CEP")
-        mensagem = errorMessages.cep.customError
-        errorDisplayON(input, mensagem)
-    }else{
-        input.setCustomValidity("")
-        preencheDadosAutomaticamente(data)
-        errorDisplayOFF(input)
+        if(data.erro){
+            input.setCustomValidity("Não foi possível buscar o CEP")
+            mensagem = errorMessages.cep.customError
+            errorDisplayON(input, mensagem)
+        }else{
+            input.setCustomValidity("")
+            preencheDadosAutomaticamente(data)
+            errorDisplayOFF(input)
+        }
+
+    }catch(err){ //se esse catch n estivesse presente e a url estivesse erroneamente escrita, os campos city/address não seriam preenchidos e nenhum erro apareceria no console, dificultado a compreenção do que aconteceu. Para capturar o erro 404(not found) use !res.ok. Esse exemplo não utilizou o .ok pq se nenhum cep for encotrado no banco de dados, o servidor ainda assim vai emitir uma resposta com codigo 200(ok), mas com valor erro: true
+        console.error(err)
     }
 }
 
@@ -120,3 +118,7 @@ const preencheDadosAutomaticamente = (data) => {
     city.value = data.localidade
     address.value = data.logradouro
 }
+
+
+
+
