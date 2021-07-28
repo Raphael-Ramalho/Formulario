@@ -21,7 +21,7 @@ Para acessa-lo, <a href="https://raphael-ramalho.github.io/Formulario/">clique a
  <li>Manipulação do DOM
  <li>.forEach( )
  <li>.setCustomValidity( )
- <li>Requisição de API com async function
+ <li>Requisição de API com fetch() em async function
  <li>Captura de erro com try {} catch {}
 </ul>
 <br>
