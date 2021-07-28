@@ -96,7 +96,7 @@ const pegaCEP = async(input) => {// o await pode ser usado dentro de funções m
         }
         const res = await fetch(url, options)
         const data = await res.json()
-
+        console.log(data)
         if(data.erro){
             input.setCustomValidity("Não foi possível buscar o CEP")
             mensagem = errorMessages.cep.customError
